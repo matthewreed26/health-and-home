@@ -17,7 +17,7 @@
     "prettier:format": "prettier --write \"{,src/**/}*.{md,json,yml,html,js,ts,tsx,css,scss,vue,java,xml}\"",
     "preview": "vite preview",
     "start": "vite",
-    "test": "npm run jest --",
+    "test": "vitest",
     "test:component": "cypress open --config-file src/test/javascript/integration/cypress-config.ts",
     "test:component:headless": "cypress run --headless --config-file src/test/javascript/integration/cypress-config.ts",
     "test:watch": "jest --watch",
