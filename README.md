@@ -25,5 +25,6 @@ npm install
 ## Documentation
 
 - [Hexagonal architecture](documentation/hexagonal-architecture.md)
+- [Vue](documentation/vue.md)
 
 <!-- jhipster-needle-documentation -->
