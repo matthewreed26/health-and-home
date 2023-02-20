@@ -17,5 +17,14 @@
       "endOfLine" : "lf",
       "indentSize" : 2
     }
+  }, {
+    "module" : "prettier",
+    "date" : "2023-02-20T02:27:57.458633Z",
+    "properties" : {
+      "projectName" : "Health And Home",
+      "baseName" : "healthAndHome",
+      "endOfLine" : "lf",
+      "indentSize" : 2
+    }
   } ]
 }
