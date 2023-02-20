@@ -15,6 +15,10 @@
     "node_modules"
   ],
   "scripts": {
+    "e2e": "npm run test:component",
+    "e2e:headless": "npm run test:component:headless",
+    "test:component": "cypress open --config-file src/test/javascript/integration/cypress-config.ts",
+    "test:component:headless": "cypress run --headless --config-file src/test/javascript/integration/cypress-config.ts",
     "build": "vue-tsc -p tsconfig.build.json --noEmit && vite build --emptyOutDir",
     "dev": "vite",
     "preview": "vite preview",
@@ -30,6 +34,8 @@
     "prettier:format": "prettier --write \"{,src/**/}*.{md,json,yml,html,js,ts,tsx,css,scss,vue,java,xml}\""
   },
   "devDependencies": {
+    "cypress": "12.6.0",
+    "eslint-plugin-cypress": "2.12.1",
     "@rushstack/eslint-patch": "1.2.0",
     "@typescript-eslint/parser": "5.52.0",
     "@vitejs/plugin-vue": "4.0.0",
