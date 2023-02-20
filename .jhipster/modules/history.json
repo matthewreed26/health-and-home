@@ -26,5 +26,14 @@
       "endOfLine" : "lf",
       "indentSize" : 2
     }
+  }, {
+    "module" : "typescript",
+    "date" : "2023-02-20T02:27:57.493259Z",
+    "properties" : {
+      "projectName" : "Health And Home",
+      "baseName" : "healthAndHome",
+      "endOfLine" : "lf",
+      "indentSize" : 2
+    }
   } ]
 }
