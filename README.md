@@ -16,17 +16,12 @@ npm install
 
 ## Local environment
 
-
 <!-- jhipster-needle-localEnvironment -->
 
 ## Start up
 
-
 <!-- jhipster-needle-startupCommand -->
 
 ## Documentation
-
-- [Hexagonal architecture](documentation/hexagonal-architecture.md)
-- [Vue](documentation/vue.md)
 
 <!-- jhipster-needle-documentation -->
