@@ -8,10 +8,20 @@ const wrap = () => {
   wrapper = shallowMount(HomepageVue);
 };
 
-describe('App', () => {
+describe('HomepageVue', () => {
   it('should exist', () => {
     wrap();
 
     expect(wrapper.exists()).toBeTruthy();
+  });
+  it('should have a name', () => {
+    wrap();
+
+    expect(wrapper.findComponent({ name: 'HomepageVue' }).exists()).toBeTruthy();
+  });
+  it('should have an app name', () => {
+    wrap();
+
+    expect(wrapper.vm.$data).toEqual({ appName: 'healthAndHome' });
   });
 });
