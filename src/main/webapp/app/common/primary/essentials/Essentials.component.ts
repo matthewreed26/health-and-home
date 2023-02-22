@@ -1,12 +1,34 @@
+import { Provide } from '@/appProvide';
 import { Essential } from '@/common/domain/essential/Essential';
-import { inject } from 'vue';
+import { Essentials } from '@/common/domain/essential/Essentials';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
   name: 'EssentialsVue',
-  setup() {
-    const essentialsList = inject('essentials') as Essential[];
+  // setup() {
+  //   let essentialsList = [] as Essential[];
+
+  //   onMounted(async () => {
+  //     const { essentials } = inject('appProvide') as Provide;
+  //     essentialsList = await (essentials as () => Essentials)().list();
+  //     console.log('onMounted', essentialsList);
+  //   });
+
+  //   console.log('setup');
+  //   return {
+  //     essentialsList,
+  //   };
+  // },
+  inject: ['appProvide'],
+  data(): {
+    essentialsList: Essential[];
+  } {
     return {
-      essentialsList,
+      essentialsList: [],
     };
   },
-};
+  async created() {
+    const { essentials } = this.appProvide as Provide;
+    this.essentialsList = await (essentials as () => Essentials)().list();
+  },
+});

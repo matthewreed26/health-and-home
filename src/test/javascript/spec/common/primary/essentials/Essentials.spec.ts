@@ -1,9 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import { shallowMount, VueWrapper } from '@vue/test-utils';
 import { EssentialsVue } from '@/common/primary/essentials';
-import EssentialsInMemory from '@/common/secondary/essentials/EssentialsInMemory';
-import { Essential } from '@/common/domain/essential/Essential';
 import { ComponentPublicInstance } from 'vue';
+import { appProvide } from '@/appProvide';
 
 type TestWrapper<T> = VueWrapper<ComponentPublicInstance & T>;
 let wrapper: TestWrapper<Partial<typeof EssentialsVue>>;
@@ -12,7 +11,7 @@ const wrap = () => {
   wrapper = shallowMount(EssentialsVue, {
     global: {
       provide: {
-        essentials: () => new EssentialsInMemory(),
+        appProvide: appProvide(),
       },
     },
   });
@@ -29,17 +28,28 @@ describe('EssentialsVue', () => {
 
     expect(wrapper.findComponent({ name: 'EssentialsVue' }).exists()).toBeTruthy();
   });
-  it('should list Essentials', () => {
-    wrap();
+  // it('should list Essentials', async () => {
+  //   wrap();
 
-    if (wrapper.vm.setup) {
-      const { essentialsList } = wrapper.vm.setup();
-      expect(essentialsList).toEqual<Essential[]>([
+  //   if (wrapper.vm.setup) {
+  //     const { essentialsList } = await wrapper.vm.setup();
+  //     expect(essentialsList).toEqual<Essential[]>([
+  //       {
+  //         type: 'Conditioner',
+  //       },
+  //       { type: 'Mouthwash' },
+  //     ]);
+  //   }
+  // });
+  it('should list Essentials', async () => {
+    wrap();
+    expect(await wrapper.vm.$data).toEqual({
+      essentialsList: [
         {
           type: 'Conditioner',
         },
         { type: 'Mouthwash' },
-      ]);
-    }
+      ],
+    });
   });
 });
