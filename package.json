@@ -20,7 +20,7 @@
     "test": "vitest",
     "test:component": "cypress open --config-file src/test/javascript/integration/cypress-config.ts",
     "test:component:headless": "cypress run --headless --config-file src/test/javascript/integration/cypress-config.ts",
-    "test:watch": "jest --watch",
+    "test:watch": "vitest watch",
     "test:watch:all": "jest --watchAll"
   },
   "dependencies": {
