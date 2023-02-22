@@ -1,34 +1,25 @@
 import { describe, it, expect } from 'vitest';
-import { shallowMount, VueWrapper } from '@vue/test-utils';
-import { AppVue } from '@/common/primary/app';
-
 import router from '@/router/router';
 
-let wrapper: VueWrapper;
-
-const wrap = () => {
-  wrapper = shallowMount(AppVue, {
-    global: {
-      stubs: ['router-link', 'router-view'],
-    },
-    router,
-  });
-};
-
 describe('Router', () => {
-  it('Should redirect to App by default', async () => {
-    wrap();
+  it('Should redirect to Homepage by default', async () => {
     await router.push('/');
-    await wrapper.vm.$nextTick();
+    await router.isReady();
 
-    expect(wrapper.findComponent(AppVue)).toBeTruthy();
+    expect(router.currentRoute.value.fullPath).toEqual('/home');
   });
 
-  it('Should go to AppVue', async () => {
-    wrap();
-    await router.push('/app');
-    await wrapper.vm.$nextTick();
+  it('Should go to Homepage', async () => {
+    await router.push('/home');
+    await router.isReady();
 
-    expect(wrapper.findComponent(AppVue)).toBeTruthy();
+    expect(router.currentRoute.value.fullPath).toEqual('/home');
+  });
+
+  it('Should go to EssentialsVue', async () => {
+    await router.push('/essentials');
+    await router.isReady();
+
+    expect(router.currentRoute.value.fullPath).toEqual('/essentials');
   });
 });
