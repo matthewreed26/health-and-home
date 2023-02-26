@@ -1,7 +1,7 @@
 <template src="./Homepage.html"></template>
 
 <script lang="ts" src="./Homepage.component.ts"></script>
-
+<!--
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -26,4 +26,4 @@ code {
   border-radius: 4px;
   color: #304455;
 }
-</style>
+</style> -->
