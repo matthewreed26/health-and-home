@@ -4,6 +4,7 @@ import router from './router/router';
 import { createPinia } from 'pinia';
 import piniaPersist from 'pinia-plugin-persist';
 import { appProvide } from './appProvide';
+import './tailwindcss/input.css';
 
 // jhipster-needle-main-ts-import
 
