@@ -3,6 +3,9 @@ import { Essentials } from '@/common/domain/essential/Essentials';
 
 export default class EssentialsInMemory implements Essentials {
   async list(): Promise<Essential[]> {
-    return [{ type: 'Conditioner' }, { type: 'Mouthwash' }];
+    return [
+      { code: 'conditioner', type: 'Conditioner' },
+      { code: 'mouthwash', type: 'Mouthwash' },
+    ];
   }
 }

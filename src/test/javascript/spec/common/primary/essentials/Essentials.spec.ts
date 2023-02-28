@@ -31,9 +31,13 @@ describe('EssentialsVue', () => {
     expect(await wrapper.vm.$data).toEqual({
       essentialsList: [
         {
+          code: 'conditioner',
           type: 'Conditioner',
         },
-        { type: 'Mouthwash' },
+        {
+          code: 'mouthwash',
+          type: 'Mouthwash',
+        },
       ],
     });
   });

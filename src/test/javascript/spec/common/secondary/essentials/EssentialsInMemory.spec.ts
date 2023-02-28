@@ -8,9 +8,13 @@ describe('EssentialsInMemory', () => {
     const essentialsList = await essentials.list();
     expect(essentialsList).toEqual<Essential[]>([
       {
+        code: 'conditioner',
         type: 'Conditioner',
       },
-      { type: 'Mouthwash' },
+      {
+        code: 'mouthwash',
+        type: 'Mouthwash',
+      },
     ]);
   });
 });
